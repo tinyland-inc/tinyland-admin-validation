@@ -1,5 +1,5 @@
 {
-  "name": "@tinyland-inc/tinyland-admin-validation",
+  "name": "@tummycrypt/tinyland-admin-validation",
   "version": "0.1.0",
   "description": "Zod validation schemas for admin user management",
   "type": "module",
@@ -12,7 +12,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "LICENSE"],
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -31,7 +34,7 @@
   },
   "dependencies": {
     "zod": "^3.23.0",
-    "@tinyland-inc/tinyland-auth": "workspace:*"
+    "@tummycrypt/tinyland-auth": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
@@ -40,5 +43,9 @@
   },
   "engines": {
     "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }

@@ -4,7 +4,7 @@
  * Provides runtime validation using Zod schemas and a sanitization
  * utility that strips sensitive fields before sending to clients.
  *
- * @module @tinyland-inc/tinyland-admin-validation/validators
+ * @module @tummycrypt/tinyland-admin-validation/validators
  */
 
 import type { AdminUser, AdminActivityLog } from './types.js';

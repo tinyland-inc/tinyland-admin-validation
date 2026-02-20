@@ -4,7 +4,7 @@
  * These types define the shape of admin entities for validation purposes.
  * The AdminUser interface here is the app-specific variant with username/password schema.
  *
- * @module @tinyland-inc/tinyland-admin-validation/types
+ * @module @tummycrypt/tinyland-admin-validation/types
  */
 
 /**

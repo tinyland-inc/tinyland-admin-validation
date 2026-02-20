@@ -1,5 +1,5 @@
 /**
- * @tinyland-inc/tinyland-admin-validation
+ * @tummycrypt/tinyland-admin-validation
  *
  * Framework-agnostic Zod validation schemas and utilities for admin user management.
  * Extracted from the tinyland.dev monorepo for standalone use.
@@ -11,7 +11,7 @@
  *   sanitizeAdminUser,
  *   ADMIN_ROLES,
  *   ADMIN_PERMISSIONS,
- * } from '@tinyland-inc/tinyland-admin-validation';
+ * } from '@tummycrypt/tinyland-admin-validation';
  *
  * const parsed = validateCreateAdminUser({
  *   username: 'newadmin',
@@ -20,7 +20,7 @@
  * });
  * ```
  *
- * @module @tinyland-inc/tinyland-admin-validation
+ * @module @tummycrypt/tinyland-admin-validation
  */
 
 // Types

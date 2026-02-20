@@ -5,15 +5,15 @@
  * and activity log entries. Includes backward compatibility for legacy
  * snake_case field names during migration.
  *
- * @module @tinyland-inc/tinyland-admin-validation/schemas
+ * @module @tummycrypt/tinyland-admin-validation/schemas
  */
 
 import { z } from 'zod';
-import type { AdminRole } from '@tinyland-inc/tinyland-auth';
+import type { AdminRole } from '@tummycrypt/tinyland-auth';
 import type { AdminPermission } from './types.js';
 
 /**
- * Admin roles array - matches AdminRole type from @tinyland-inc/tinyland-auth
+ * Admin roles array - matches AdminRole type from @tummycrypt/tinyland-auth
  * Note: excludes 'member' role which is not used in admin validation context
  */
 export const ADMIN_ROLES: AdminRole[] = [
