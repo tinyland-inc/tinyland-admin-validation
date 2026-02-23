@@ -1,19 +1,19 @@
 import { describe, it, expect } from 'vitest';
 import { ZodError } from 'zod';
 import {
-  // Types (tested via value exports)
+  
   type AdminUser,
   type AdminActivityLog,
   type AdminPermission,
-  // Constants
+  
   ADMIN_ROLES,
   ADMIN_PERMISSIONS,
-  // Schemas
+  
   adminUserSchema,
   createAdminUserSchema,
   updateAdminUserSchema,
   adminActivityLogSchema,
-  // Functions
+  
   sanitizeAdminUser,
   validateActivityLog,
   validateAdminUser,
@@ -21,9 +21,9 @@ import {
   validateUpdateAdminUser,
 } from '../src/index.js';
 
-// ---------------------------------------------------------------------------
-// Test Fixtures
-// ---------------------------------------------------------------------------
+
+
+
 
 const NOW = '2024-01-15T12:00:00.000Z';
 const LATER = '2024-06-15T12:00:00.000Z';
@@ -65,9 +65,9 @@ function validActivityLog() {
   };
 }
 
-// ---------------------------------------------------------------------------
-// 1. Types (compile-time + runtime shape checks)
-// ---------------------------------------------------------------------------
+
+
+
 
 describe('Types', () => {
   it('AdminUser interface accepts a minimal valid object', () => {
@@ -178,9 +178,9 @@ describe('Types', () => {
   });
 });
 
-// ---------------------------------------------------------------------------
-// 2. ADMIN_ROLES constant
-// ---------------------------------------------------------------------------
+
+
+
 
 describe('ADMIN_ROLES', () => {
   it('has exactly 7 entries', () => {
@@ -224,9 +224,9 @@ describe('ADMIN_ROLES', () => {
   });
 });
 
-// ---------------------------------------------------------------------------
-// 3. ADMIN_PERMISSIONS constant
-// ---------------------------------------------------------------------------
+
+
+
 
 describe('ADMIN_PERMISSIONS', () => {
   it('has exactly 9 entries', () => {
@@ -280,9 +280,9 @@ describe('ADMIN_PERMISSIONS', () => {
   });
 });
 
-// ---------------------------------------------------------------------------
-// 4. adminUserSchema
-// ---------------------------------------------------------------------------
+
+
+
 
 describe('adminUserSchema', () => {
   it('accepts a valid admin user', () => {
@@ -544,9 +544,9 @@ describe('adminUserSchema', () => {
   });
 });
 
-// ---------------------------------------------------------------------------
-// 5. createAdminUserSchema
-// ---------------------------------------------------------------------------
+
+
+
 
 describe('createAdminUserSchema', () => {
   it('accepts valid creation input', () => {
@@ -655,9 +655,9 @@ describe('createAdminUserSchema', () => {
   });
 });
 
-// ---------------------------------------------------------------------------
-// 6. updateAdminUserSchema
-// ---------------------------------------------------------------------------
+
+
+
 
 describe('updateAdminUserSchema', () => {
   it('accepts an empty object (all fields optional)', () => {
@@ -740,9 +740,9 @@ describe('updateAdminUserSchema', () => {
   });
 });
 
-// ---------------------------------------------------------------------------
-// 7. adminActivityLogSchema
-// ---------------------------------------------------------------------------
+
+
+
 
 describe('adminActivityLogSchema', () => {
   it('accepts a valid activity log', () => {
@@ -895,9 +895,9 @@ describe('adminActivityLogSchema', () => {
   });
 });
 
-// ---------------------------------------------------------------------------
-// 8. sanitizeAdminUser
-// ---------------------------------------------------------------------------
+
+
+
 
 describe('sanitizeAdminUser', () => {
   it('removes passwordHash from the result', () => {
@@ -1047,9 +1047,9 @@ describe('sanitizeAdminUser', () => {
   });
 });
 
-// ---------------------------------------------------------------------------
-// 9. Validation functions
-// ---------------------------------------------------------------------------
+
+
+
 
 describe('validateAdminUser', () => {
   it('returns parsed data for a valid user', () => {
