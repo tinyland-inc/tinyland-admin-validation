@@ -1,15 +1,15 @@
-/**
- * Admin validation types - internalized from the monorepo
- *
- * These types define the shape of admin entities for validation purposes.
- * The AdminUser interface here is the app-specific variant with username/password schema.
- *
- * @module @tummycrypt/tinyland-admin-validation/types
- */
 
-/**
- * Admin permission strings for granular access control
- */
+
+
+
+
+
+
+
+
+
+
+
 export type AdminPermission =
   | 'admin.access'
   | 'admin.users.manage'
@@ -21,17 +21,17 @@ export type AdminPermission =
   | 'admin.settings.manage'
   | 'admin.security.manage';
 
-/**
- * AdminUser interface - App-specific with username/password schema
- *
- * NOTE: This differs from @tinyland/auth's AdminUser which uses handle/passwordHash.
- * This interface is for the app's internal user management with SvelteKit.
- *
- * All field names use consistent camelCase convention for:
- * - Better TypeScript/JavaScript alignment
- * - Consistent API contracts
- * - Easier refactoring and maintenance
- */
+
+
+
+
+
+
+
+
+
+
+
 export interface AdminUser {
   id: string;
   username: string;
@@ -81,19 +81,19 @@ export interface AdminUser {
     };
   };
   backupCodes?: string[];
-  /** @deprecated Use certificateCn instead */
+  
   certificate_cn?: string;
-  /** @deprecated Use invitedBy instead */
+  
   invited_by?: string;
-  /** @deprecated Use invitationToken instead */
+  
   invitation_token?: string;
 }
 
-/**
- * AdminActivityLog interface - Standardized camelCase naming
- *
- * Activity log entries for auditing admin actions.
- */
+
+
+
+
+
 export interface AdminActivityLog {
   id: string;
   adminUserId: string;
@@ -105,16 +105,16 @@ export interface AdminActivityLog {
   userAgent: string | null;
   details: any | null;
   createdAt: string;
-  /** @deprecated Use adminUserId instead */
+  
   admin_user_id?: string;
-  /** @deprecated Use resourceType instead */
+  
   resource_type?: string;
-  /** @deprecated Use resourceId instead */
+  
   resource_id?: string | null;
-  /** @deprecated Use ipAddress instead */
+  
   ip_address?: string | null;
-  /** @deprecated Use userAgent instead */
+  
   user_agent?: string | null;
-  /** @deprecated Use createdAt instead */
+  
   created_at?: string;
 }
