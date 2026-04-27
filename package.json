@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "zod": "^3.23.0",
-    "@tummycrypt/tinyland-auth": "workspace:^"
+    "@tummycrypt/tinyland-auth": "^0.2.2"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
