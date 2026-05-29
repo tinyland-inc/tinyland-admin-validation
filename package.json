@@ -33,15 +33,13 @@
     "url": "git+https://github.com/tinyland-inc/tinyland-admin-validation.git"
   },
   "dependencies": {
-    "zod": "^3.23.0",
-    "@tummycrypt/tinyland-auth": "^0.2.2"
+    "zod": "^3.23.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "typescript": "^5.0.0",
     "vitest": "^4.0.0",
-    "publint": "^0.3.18",
-    "@tummycrypt/tinyland-auth": "^0.2.2"
+    "publint": "^0.3.18"
   },
   "engines": {
     "node": ">=22.0.0"

@@ -5,12 +5,17 @@ Dual-mode build: works with both pnpm (standalone) and Bazel (CI/production).
   Standalone: cd packages/tinyland-admin-validation && pnpm build
 """
 
-load("@aspect_rules_js//npm:defs.bzl", "npm_package")
+load("@aspect_rules_js//npm:defs.bzl", "npm_link_package", "npm_package")
 load("@aspect_rules_ts//ts:defs.bzl", "ts_project")
 load("@tummycrypt_tinyland_admin_validation_npm//:defs.bzl", "npm_link_all_packages")
 load("@tummycrypt_tinyland_admin_validation_npm//:vitest/package_json.bzl", vitest_bin = "bin")
 
 npm_link_all_packages(name = "node_modules")
+
+npm_link_package(
+    name = "node_modules/@tummycrypt/tinyland-auth",
+    src = "@tummycrypt_tinyland_auth//:pkg",
+)
 
 
 ts_project(
@@ -34,6 +39,7 @@ ts_project(
         ":node_modules",
         ":node_modules/zod",
         ":node_modules/@types/node",
+        ":node_modules/@tummycrypt/tinyland-auth",
     ],
     visibility = ["//visibility:public"],
 )
@@ -55,6 +61,7 @@ vitest_bin.vitest_test(
         ":node_modules",
         "tsconfig.json",
         ":node_modules/vitest",
+        ":node_modules/@tummycrypt/tinyland-auth",
         "vitest.config.ts",
     ] + glob(["src/**/*.ts"]) + glob(["tests/**/*.test.ts", "tests/**/*.ts"]),
     args = [
