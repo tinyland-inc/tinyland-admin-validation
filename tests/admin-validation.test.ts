@@ -162,11 +162,10 @@ describe('Types', () => {
     expect(log.admin_user_id).toBe('usr_1');
   });
 
-  it('AdminPermission type allows all 9 permission values', () => {
+  it('AdminPermission type allows all 8 permission values', () => {
     const perms: AdminPermission[] = [
       'admin.access',
       'admin.users.manage',
-      'admin.users.moderate',
       'admin.content.manage',
       'admin.content.moderate',
       'admin.events.manage',
@@ -174,7 +173,7 @@ describe('Types', () => {
       'admin.settings.manage',
       'admin.security.manage',
     ];
-    expect(perms).toHaveLength(9);
+    expect(perms).toHaveLength(8);
   });
 });
 
@@ -183,8 +182,8 @@ describe('Types', () => {
 
 
 describe('ADMIN_ROLES', () => {
-  it('has exactly 7 entries', () => {
-    expect(ADMIN_ROLES).toHaveLength(7);
+  it('has exactly 8 entries', () => {
+    expect(ADMIN_ROLES).toHaveLength(8);
   });
 
   it('includes super_admin', () => {
@@ -215,8 +214,8 @@ describe('ADMIN_ROLES', () => {
     expect(ADMIN_ROLES).toContain('viewer');
   });
 
-  it('does not include member', () => {
-    expect(ADMIN_ROLES).not.toContain('member');
+  it('includes member', () => {
+    expect(ADMIN_ROLES).toContain('member');
   });
 
   it('is an array', () => {
@@ -229,8 +228,8 @@ describe('ADMIN_ROLES', () => {
 
 
 describe('ADMIN_PERMISSIONS', () => {
-  it('has exactly 9 entries', () => {
-    expect(ADMIN_PERMISSIONS).toHaveLength(9);
+  it('has exactly 8 entries', () => {
+    expect(ADMIN_PERMISSIONS).toHaveLength(8);
   });
 
   it('includes admin.access', () => {
@@ -241,8 +240,8 @@ describe('ADMIN_PERMISSIONS', () => {
     expect(ADMIN_PERMISSIONS).toContain('admin.users.manage');
   });
 
-  it('includes admin.users.moderate', () => {
-    expect(ADMIN_PERMISSIONS).toContain('admin.users.moderate');
+  it('does not include the dead admin.users.moderate string (TIN-2435)', () => {
+    expect(ADMIN_PERMISSIONS).not.toContain('admin.users.moderate');
   });
 
   it('includes admin.content.manage', () => {

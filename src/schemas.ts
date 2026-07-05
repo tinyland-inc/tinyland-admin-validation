@@ -16,6 +16,10 @@ import type { AdminPermission } from './types.js';
 
 
 
+// ADMIN_ROLES and ADMIN_PERMISSIONS must mirror the ratified vocabulary in
+// @tummycrypt/tinyland-auth v0.4.0 (src/types/auth.ts ADMIN_ROLES,
+// src/types/permissions.ts AdminPermission) exactly. See TIN-2435.
+// tests/vocabulary-alignment.test.ts asserts this stays in sync.
 export const ADMIN_ROLES: AdminRole[] = [
   'super_admin',
   'admin',
@@ -23,6 +27,7 @@ export const ADMIN_ROLES: AdminRole[] = [
   'editor',
   'event_manager',
   'contributor',
+  'member',
   'viewer',
 ];
 
@@ -32,7 +37,6 @@ export const ADMIN_ROLES: AdminRole[] = [
 export const ADMIN_PERMISSIONS: AdminPermission[] = [
   'admin.access',
   'admin.users.manage',
-  'admin.users.moderate',
   'admin.content.manage',
   'admin.content.moderate',
   'admin.events.manage',
@@ -63,6 +67,7 @@ export const adminUserSchema = z.object({
     'editor',
     'event_manager',
     'contributor',
+    'member',
     'viewer',
   ]),
   certificateCn: z.string().nullable().optional(),
@@ -93,6 +98,7 @@ export const createAdminUserSchema = z.object({
     'editor',
     'event_manager',
     'contributor',
+    'member',
     'viewer',
   ]),
   totpEnabled: z.boolean().optional().default(false),
@@ -114,6 +120,8 @@ export const updateAdminUserSchema = z.object({
       'editor',
       'event_manager',
       'moderator',
+      'contributor',
+      'member',
       'viewer',
     ])
     .optional(),
